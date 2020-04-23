@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calendar</title>
+</head>
+<body>
+  <ul>
+    <% events.forEach(function (event) { %>
+      <li><%- JSON.stringify(event) %></li>
+    <% }) %>
+  </ul>
+  <h2>Create an event & invite</h2>
+  <form id="form1" method="POST" action="http://localhost:5000/get_some_data">
+    <input type="text" name="summary" placeholder="title" required><br>
+    <input type="text" name="location" placeholder="location"><br>
+    <input type="text" name="description" placeholder="description"><br>
+    <h2>Start Time</h2>
+    <input type="text" name="date" placeholder="YYYY-MM-DD">
+    <input type="text" name="time" placeholder="HH:MM">
+    <h2>End Time</h2>
+    <input type="text" name="Edate" placeholder="YYYY-MM-DD">
+    <input type="text" name="Etime" placeholder="HH:MM">
+    <h4>Attendees</h4>
+    <input type="email" name="attendee1" placeholder="attendee email" required><br>
+    <input type="email" name="attendee2" placeholder="attendee email" required><br>
+    <input type="submit" value="submit">
+  </form>
+</body>
+</html>
